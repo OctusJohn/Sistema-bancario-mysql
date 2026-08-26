@@ -33,7 +33,7 @@ def depositar(conexao,deposito:float, saldo):
 
         cursor = conexao.cursor() #define o cursor para ficar mais facil de ler
 
-        sql = "INSERT INTO banco(tipo,valor,saldo_total) VALUES (%s, %s, %s)" #prepara o comando base de sql
+        sql = "INSERT INTO banco (tipo,valor,saldo_total) VALUES (%s, %s, %s)" #prepara o comando base de sql
         valores=('deposito', deposito,saldo)#define o tipo das variaveis
 
         cursor.execute(sql, valores)#realiza o comando em si
@@ -53,7 +53,7 @@ def sacar(conexao,saque, saldo=0.0):
         saldo -= saque
 
         cursor=conexao.cursor()
-        sql=" INSERT INTO BANCO (tipo,valor,saldo_total) VALUES (%s, %s, %s)"
+        sql=" INSERT INTO banco (tipo,valor,saldo_total) VALUES (%s, %s, %s)"
         valores=('saque', saque, saldo)
 
         cursor.execute(sql, valores)
